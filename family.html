@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+		<title>蜡笔小新</title>
+		<link rel="icon" type="image/png" href="img/logo.png" />
+		<link rel="stylesheet" href="css/333.css" />
+
+		<style>
+			/* 轮播图容器的样式 */
+			/*.slideshow {
+				width: 600px;
+				height: 300px;
+				overflow: hidden;
+				margin-left: 800px;
+				position: relative;
+			}*/
+			/* 图片的样式 */
+			
+			.slideshow img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			/* 左右按钮的样式 */
+			
+			.prev,
+			.next {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: rgba(0, 0, 0, 0.5);
+				color: #fff;
+				font-size: 20px;
+				padding: 10px;
+				cursor: pointer;
+			}
+			
+			.prev {
+				left: 805px;
+				top: 230px;
+			}
+			
+			.next {
+				right: 200px;
+				top: 230px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="grandfather">
+			<div class="father">
+				<div class="one">
+					<img src="img/hz2.jpg" title="小新合照" style="width: 1600px;height: 300px;" />
+				</div>
+				<div class="two">
+					<ul>
+						<li>
+							<a href="index.html">首页</a>
+						</li>
+						
+						<li>
+							<a href="family.html">家庭成员</a>
+						</li>
+						<li>
+							<a href="school.html">我的学校</a>
+						</li>
+						<li>
+							<a href="hometown.html">我的家乡</a>
+						</li>
+					</ul>
+				</div>
+				<div class="three">
+					<h1>家庭成员</h1>
+					<div class="slideshow">
+						<img src="img/my.jpg" />
+						<img src="img/guangzhi.jpg" />
+						<img src="img/xb.jpg" />
+					</div>
+
+					<div class="prev">&#10094;</div>
+					<div class="next">&#10095;</div>
+					<script>
+						// 获取元素
+						var slideshow = document.querySelector('.slideshow');
+						var images = document.querySelectorAll('.slideshow img');
+						var prevBtn = document.querySelector('.prev');
+						var nextBtn = document.querySelector('.next');
+
+						// 定义当前显示图片的索引
+						var currentIndex = 0;
+
+						// 设置初始显示图片
+						images[currentIndex].style.display = "block";
+
+						// 点击上一张按钮
+						prevBtn.addEventListener('click', function() {
+							images[currentIndex].style.display = "none";
+							currentIndex = (currentIndex - 1 + images.length) % images.length;
+							images[currentIndex].style.display = "block";
+						});
+
+						// 点击下一张按钮
+						nextBtn.addEventListener('click', function() {
+							images[currentIndex].style.display = "none";
+							currentIndex = (currentIndex + 1) % images.length;
+							images[currentIndex].style.display = "block";
+						});
+					</script>
+
+					<div class="three1">
+						<video src="img/sp.mp4" controls="controls" style="width: 300px ;height: 300px;"></video>
+					</div>
+
+				</div>
+				<div class="four">
+					<div class="four1"><img src="img/four1.gif" style="width: 200px;height: 200px;"></div>
+					<div class="four2"><img src="img/four2.gif" style="width: 200px;height: 200px;"></div>
+					<div class="four3"><img src="img/four3.gif" style="width: 200px;height: 200px;"></div>
+					<div class="four4"><img src="img/four4.gif" style="width: 200px;height: 200px;"></div>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
